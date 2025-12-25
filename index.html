@@ -14,8 +14,8 @@
             --slate: #2D3436;
             --cloud: #F9FAFB;
         }
-        html {
-             scroll-behavior: smooth;
+        html{
+            scroll-behavior: smooth;
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -83,9 +83,76 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* --- Floating WhatsApp Button CSS --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #25d366;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.7;
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Adjust positioning for mobile devices */
+        @media screen and (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+
     </style>
 </head>
 <body>
+           <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918949106470?text=Hi%20Ganesh,%20I%20want%20in%20to%Look%your%portfolio%20for%20my%website%20development." 
+       target="_blank" 
+       class="whatsapp-float"
+       aria-label="Contact us on WhatsApp">
+        <div class="whatsapp-pulse"></div>
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+    </a>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
@@ -110,6 +177,16 @@
             </button>
         </div>
     </nav>
+    <!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden fixed top-20 left-0 w-full bg-white border-t border-gray-100 z-40">
+  <div class="flex flex-col p-6 space-y-6 text-center text-sm font-medium uppercase tracking-wider">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#products" class="nav-link">Products</a>
+    <a href="#how-it-works" class="nav-link">Process</a>
+    <a href="#contact" class="bg-sapphire text-white px-6 py-3 rounded-full">Get a Quote</a>
+  </div>
+</div>
+
 
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center hero-gradient text-white pt-20">
@@ -145,8 +222,8 @@
                     <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-gold">
                         <i data-lucide="leaf"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 brand-font">Eco-Conscious</h3>
-                    <p class="text-gray-500 text-sm">Eliminate single-use plastic with high-quality, refillable borosilicate glass.</p>
+                    <h3 class="text-xl font-bold mb-3 brand-font">Food-Grade Safety</h3>
+                    <p class="text-gray-500 text-sm">BPA-free, food-grade plastic ensuring purity and consistent quality standards.</p>
                 </div>
                 <div class="reveal text-center">
                     <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-gold">
@@ -160,7 +237,7 @@
                         <i data-lucide="sparkles"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 brand-font">Superior Finish</h3>
-                    <p class="text-gray-500 text-sm">Precision screen printing that withstands industrial dishwashers.</p>
+                    <p class="text-gray-500 text-sm">Flawless print quality engineered for durability on premium plastic bottles.</p>
                 </div>
             </div>
         </div>
@@ -204,27 +281,27 @@
                 <!-- Product 1 -->
                 <div class="reveal group">
                     <div class="relative overflow-hidden rounded-3xl bg-gray-100 mb-6 aspect-[4/5] flex items-center justify-center">
-                        <img src="images/bottle1.png.jpeg" alt="Nordic Bottle" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="images/bottle2.png.jpeg" alt="Nordic Bottle" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase text-sapphire">Most Popular</div>
                     </div>
                     <h3 class="text-2xl font-bold mb-2 brand-font">THE CLEARA</h3>
-                    <p class="text-gray-500 mb-4 text-sm">Minimalist silhouette with a wide neck. Perfect for infused waters.</p>
+                    <p class="text-gray-500 mb-4 text-sm">Minimalist silhouette with a short neck. Perfect for everyday drinking water.</p>
                     <ul class="text-xs space-y-2 text-gray-400 mb-6">
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Dishwasher Safe</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Laser Etching Available</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Compact ergonomic design</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Ideal for premium branding</li>
                     </ul>
                 </div>
 
                 <!-- Product 2 -->
                 <div class="reveal group">
                     <div class="relative overflow-hidden rounded-3xl bg-gray-100 mb-6 aspect-[4/5] flex items-center justify-center">
-                        <img src="images/bottle2.png.jpeg" alt="Classic Carafe" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="images/bottle5.png.jpeg" alt="Classic Carafe" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-2xl font-bold mb-2 brand-font">THE AQUIN</h3>
-                    <p class="text-gray-500 mb-4 text-sm">Elegant, tapered design for premium dining and boutique hotels.</p>
+                    <p class="text-gray-500 mb-4 text-sm">Sleek modern form designed for refined table and service presentation.</p>
                     <ul class="text-xs space-y-2 text-gray-400 mb-6">
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Borosilicate Glass</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Full Color Printing</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Lightweight yet durable build</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Smooth finish for custom labels</li>
                     </ul>
                 </div>
 
@@ -234,69 +311,55 @@
                         <img src="images/bottle3.png.jpeg" alt="Slimline Bottle" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-2xl font-bold mb-2 brand-font">THE PUREON</h3>
-                    <p class="text-gray-500 mb-4 text-sm">Compact design for quick-service cafés and bistro seating.</p>
+                    <p class="text-gray-500 mb-4 text-sm">Balanced design crafted for comfort, consistency, and professional use.</p>
                     <ul class="text-xs space-y-2 text-gray-400 mb-6">
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Space Saving</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Custom Silicone Sleeves</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Easy-grip contoured body</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Reliable for daily and bulk usage</li>
                     </ul>
                 </div>
 
                 <!-- Product 4 -->
                 <div class="reveal group">
-                    <div class="relative overflow-hidden rounded-3xl bg-gray-100 mb-6 aspect-[4/5] flex items-center justify-center">
+                    <div class="relative overflow-hidden rounded-3xl bg-gray-100 mb-6 aspect-[3/5] flex items-center justify-center">
                         <img src="images/bottle4.png.jpeg" alt="Classic Carafe" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-2xl font-bold mb-2 brand-font">THE NEOVA</h3>
-                    <p class="text-gray-500 mb-4 text-sm">Elegant, tapered design for premium dining and boutique hotels.</p>
+                    <p class="text-gray-500 mb-4 text-sm">Elegant, tapered design created for refined dining and boutique hospitality.</p>
                     <ul class="text-xs space-y-2 text-gray-400 mb-6">
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Borosilicate Glass</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Full Color Printing</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Balanced silhouette with secure grip</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Ideal for premium table service</li>
                     </ul>
                 </div>
 
 
                 <!-- Product 5 -->
                 <div class="reveal group">
-                    <div class="relative overflow-hidden rounded-3xl bg-gray-100 mb-6 aspect-[4/5] flex items-center justify-center">
-                        <img src="images/bottle5.png.jpeg" alt="Classic Carafe" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="relative overflow-hidden rounded-3xl bg-gray-100 mb-6 aspect-[3/5] flex items-center justify-center">
+                        <img src="images/bottle1.png.jpeg" alt="Classic Carafe" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-2xl font-bold mb-2 brand-font">THE WATERRA</h3>
-                    <p class="text-gray-500 mb-4 text-sm">Elegant, tapered design for premium dining and boutique hotels.</p>
+                    <p class="text-gray-500 mb-4 text-sm">A clean, modern bottle designed for effortless pouring and everyday elegance.</p>
                     <ul class="text-xs space-y-2 text-gray-400 mb-6">
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Borosilicate Glass</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Full Color Printing</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Smooth surface for custom branding</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Perfect for cafés and hotels</li>
                     </ul>
                 </div>
 
 
                 <!-- Product 6 -->
                 <div class="reveal group">
-                    <div class="relative overflow-hidden rounded-3xl bg-gray-100 mb-6 aspect-[4/5] flex items-center justify-center">
+                    <div class="relative overflow-hidden rounded-3xl bg-gray-100 mb-6 aspect-[3/5] flex items-center justify-center">
                         <img src="images/bottle6.png.jpeg" alt="Classic Carafe" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-2xl font-bold mb-2 brand-font">THE CLARIO</h3>
-                    <p class="text-gray-500 mb-4 text-sm">Elegant, tapered design for premium dining and boutique hotels.</p>
+                    <p class="text-gray-500 mb-4 text-sm">Tall, minimalist form crafted for graceful presentation and comfortable use.</p>
                     <ul class="text-xs space-y-2 text-gray-400 mb-6">
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Borosilicate Glass</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Full Color Printing</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Sleek ergonomic profile</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 mr-2 text-gold"></i> Designed for daily service use</li>
                     </ul>
                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
+                </div>
         </div>
     </section>
 
@@ -332,15 +395,15 @@
                 </div>
                 <div class="bg-white/5 p-12 rounded-3xl border border-white/10 reveal">
                     <h3 class="text-2xl font-bold mb-6 text-gold brand-font text-center">Ready to Elevate?</h3>
-                    <p class="text-center mb-8 text-gray-300">Join 500+ café owners who have upgraded their service with ELIXIA.</p>
+                    <p class="text-center mb-8 text-gray-300">Join 40+ café owners who have upgraded their service with ELIXIA.</p>
                     <div class="space-y-4">
                         <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10">
                             <span>Minimum Order Quantity</span>
-                            <span class="text-gold font-bold">500+ Units</span>
+                            <span class="text-gold font-bold">50+ Units</span>
                         </div>
                         <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10">
                             <span>Print Lead Time</span>
-                            <span class="text-gold font-bold">7-10 Days</span>
+                            <span class="text-gold font-bold">2-5 Days</span>
                         </div>
                         <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10">
                             <span>Service Availability</span>
@@ -362,10 +425,13 @@
                 </div>
                 
                 <form class="space-y-6">
+                <!--<input type="hidden" name="access_key" value="349f0e8b-b8f8-4172-926d-0d5703caf14d">-->
+
+
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Full Name</label>
-                            <input type="text" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition" placeholder="John Smith">
+                            <input type="text" name ="name" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition" placeholder="John Smith" required>
                         </div>
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Business Name</label>
@@ -373,20 +439,36 @@
                         </div>
                     </div>
                     <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Contact Number</label>
+                        <input type="tel" name ="phone" maxlength="13" inputmode="numeric" pattern="^\+?[0-9]{10,12}$" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition" placeholder="+91 0123456789" required>
+                    </div>
+                    <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Work Email</label>
-                        <input type="email" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition" placeholder="john@cafebusiness.com">
+                        <input type="email" name ="email" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition" placeholder="john@cafebusiness.com" required>
+                    </div>
+                     <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Bottle Type</label>
+                        <select type="name" name ="Bottle Type" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition" required>
+                            <option>THE CLEARA</option>
+                            <option>THE AQUIN</option>
+                            <option>THE PUREON</option>
+                            <option>THE NEOVA</option>
+                            <option>THE WATERRA</option>
+                            <option>THE CLARIO</option>
+                        </select>
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Estimated Quantity</label>
-                        <select class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition">
-                            <option>48 - 100 bottles</option>
+                        <select type="name" name ="Bottles Quantity" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition" required>
+                            <option>50 bottles</option>
+                            <option>50 - 100 bottles</option>
                             <option>100 - 500 bottles</option>
                             <option>500+ bottles (Chain Enterprise)</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Bottle Sizes</label>
-                        <select class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition">
+                        <select type="name" name ="Bottle Sizes" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition" required>
                             <option>1 Ltr</option>
                             <option>500 ml</option>
                             <option>250 ml</option>
@@ -395,53 +477,65 @@
 
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Water Type</label>
-                        <select class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition">
+                        <select type="name" name ="Water Type" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-gold outline-none transition" required>
                             <option>Mineral Water</option>
                             <option>Alkaline Water</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Additional Message</label>
-                        <textarea class="w-full bg-gray-50 border-none rounded-xl p-4 h-32 focus:ring-2 focus:ring-gold outline-none transition" placeholder="Tell us about your branding needs..."></textarea>
+                        <textarea name ="Message" class="w-full bg-gray-50 border-none rounded-xl p-4 h-32 focus:ring-2 focus:ring-gold outline-none transition" placeholder="Tell us about your branding needs..." required></textarea>
                     </div>
-                    <button type="button" class="w-full btn-primary py-4 rounded-xl font-bold uppercase tracking-widest text-sm" onclick="alert('Thank you! Our design team will contact you within 24 hours.')">
+                    <button type="submit" class="w-full btn-primary py-4 rounded-xl font-bold uppercase tracking-widest text-sm" >
                         Request Pricing & Mockup
                     </button>
                 </form>
 
                 <div class="mt-12 flex flex-col md:flex-row justify-between items-center pt-10 border-t border-gray-100 gap-6">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-green-50 text-green-600 rounded-full flex items-center justify-center">
-                            <i data-lucide="phone" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-gray-400 uppercase font-bold">WhatsApp Us</p>
-                            <p class="text-sm font-bold">+91 9821275266</p>
-                        </div>
-                    </div>
-                    <a href="https://www.instagram.com/elixia_beverages/">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-gray-400 uppercase font-bold">Instagram Support</p>
-                            <p class="text-sm font-bold">elixia_beverages</p>
-                        </div>
-                    </div>
-                    </a>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-gray-400 uppercase font-bold">Email Support</p>
-                            <p class="text-sm font-bold">elixiabeverages@gmail.com</p>
-                        </div>
-                    </div>
+                    <div class="flex items-center gap-3 w-full md:w-auto whitespace-nowrap md:whitespace-normal">
+
+                <div class="w-10 h-10 bg-green-50 text-green-600 rounded-full flex items-center justify-center shrink-0"><i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+
+                <div class="flex flex-col leading-tight">
+                    <p class="text-xs text-gray-400 uppercase font-bold">
+                        WhatsApp Us
+                    </p>
+                    <p class="text-sm font-bold">
+                        +91 9821275266
+                    </p>
                 </div>
             </div>
+
+                <a href="https://www.instagram.com/elixia_beverages/" class="w-full md:w-auto">
+            <div class="flex items-center gap-3 whitespace-nowrap md:whitespace-normal">
+
+                <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0"><i data-lucide="instagram" class="w-5 h-5"></i>
         </div>
+                <div class="flex flex-col leading-tight">
+                    <p class="text-xs text-gray-400 uppercase font-bold">
+                        Instagram
+                    </p>
+                    <p class="text-sm font-bold">
+                        elixia_beverages
+                    </p>
+                </div>
+            </div>
+            </a>
+                <div class="flex items-center gap-3 w-full md:w-auto whitespace-nowrap md:whitespace-normal">
+            <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+
+                <div class="flex flex-col leading-tight">
+                    <p class="text-xs text-gray-400 uppercase font-bold">
+                        Email Support
+                    </p>
+                    <p class="text-sm font-bold">
+                        elixiabeverages@gmail.com
+                    </p>
+                </div>
+            </div>
     </section>
 
     <!-- Footer -->
@@ -480,7 +574,7 @@
                 <div class="col-span-2 md:col-span-1">
                     <h5 class="text-gold font-bold uppercase text-xs tracking-widest mb-6">Connect</h5>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-gold transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="https://www.instagram.com/elixia_beverages/" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-gold transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
                         <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-gold transition"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
                     </div>
                 </div>
@@ -513,9 +607,13 @@
         reveal();
 
         // Mobile Menu Simulation
-        document.getElementById('menuBtn').addEventListener('click', () => {
-            alert("Mobile menu toggled. Navigation would appear here on a live site.");
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
         });
+
     </script>
 </body>
-</html> 
+</html>
